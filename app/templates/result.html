@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Protected — Nova Project Shield</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="badge">Result</div>
+      <h1>{{ "Protected" if result.reached_threshold else "Needs stronger preset" }}</h1>
+      <div class="scores">
+        <div><strong>{{ result.protection_score }}/100</strong><span>Protection score</span></div>
+        <div><strong>{{ result.visual_quality_score }}/100</strong><span>Visual quality</span></div>
+        <div><strong>{{ result.preset }}</strong><span>Preset</span></div>
+        <div><strong>{{ result.mode }}</strong><span>Mode</span></div>
+      </div>
+      {% if result.warnings %}
+      <div class="warn">
+        {% for w in result.warnings %}<p>{{ w }}</p>{% endfor %}
+      </div>
+      {% endif %}
+      <p class="boundary">Metadata: {{ result.metadata }}</p>
+      <a class="button" href="/download/{{ filename }}">Download protected PNG</a>
+      <a class="link" href="/">Protect another image</a>
+    </section>
+  </main>
+</body>
+</html>

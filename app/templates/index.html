@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+  <title>Blindspot Shield — AI-Powered Adversarial Art Protection by NovaProject</title>
+  <meta name="description" content="Blindspot Shield protects your artwork from AI training and unauthorized copying with invisible adversarial protection. Enterprise-grade defense for digital creators.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://blindspot.novaproject.cloud/">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Blindspot Shield — AI-Powered Adversarial Art Protection">
+  <meta property="og:description" content="Protect your artwork from AI training and unauthorized copying with invisible adversarial protection.">
+  <meta property="og:url" content="https://blindspot.novaproject.cloud/">
+  <meta property="og:site_name" content="Blindspot Shield">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://blindspot.novaproject.cloud/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blindspot Shield — AI-Powered Adversarial Art Protection">
+  <meta name="twitter:description" content="Protect your artwork from AI training and unauthorized copying with invisible adversarial protection.">
+  <meta name="twitter:image" content="https://blindspot.novaproject.cloud/og-image.png">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  <!-- Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/static/style.css">
+  
+  <!-- Organization Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Blindspot Shield",
+    "description": "AI-powered adversarial art protection for digital creators",
+    "url": "https://blindspot.novaproject.cloud/",
+    "applicationCategory": "SecurityApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "NovaProject",
+      "url": "https://novaproject.cloud/"
+    }
+  }
+  </script>
+  
+  <!-- WebSite Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Blindspot Shield",
+    "url": "https://blindspot.novaproject.cloud/",
+    "description": "AI-powered adversarial art protection"
+  }
+  </script>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════════════════════════ -->
+<header class="navbar">
+  <div class="navbar__inner">
+    <a href="/" class="navbar__logo">
+      <span class="navbar__logo-text">Blindspot Shield</span>
+    </a>
+    
+    <!-- Desktop nav -->
+    <nav class="navbar__nav" aria-label="Primary navigation">
+      <a href="/" class="navbar__link">Protect</a>
+      <a href="/gallery" class="navbar__link">Gallery</a>
+      <a href="/how-it-works" class="navbar__link">How it Works</a>
+      <a href="/faq" class="navbar__link">FAQ</a>
+    </nav>
+    
+    <!-- Desktop CTA -->
+    <div class="navbar__cta">
+      <a href="/" class="btn btn--primary btn--sm">Start Protecting</a>
+    </div>
+    
+    <!-- Hamburger -->
+    <button class="navbar__hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <div class="mobile-drawer__backdrop" id="drawer-backdrop"></div>
+  <div class="mobile-drawer__panel">
+    <nav class="mobile-drawer__links" aria-label="Mobile navigation">
+      <a href="/" class="mobile-drawer__link">Protect</a>
+      <a href="/gallery" class="mobile-drawer__link">Gallery</a>
+      <a href="/how-it-works" class="mobile-drawer__link">How it Works</a>
+      <a href="/faq" class="mobile-drawer__link">FAQ</a>
+    </nav>
+    <a href="/" class="btn btn--primary" style="width:100%;justify-content:center;">Start Protecting</a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     MAIN CONTENT
+════════════════════════════════════════════════════════════ -->
+<main>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero__content">
+      <div class="badge">NovaProject / Blindspot</div>
+      <h1 class="hero__title">Protect Your Art from AI</h1>
+      <p class="hero__subtitle">Invisible adversarial protection that makes your artwork harder and less reliable to copy or train on. Enterprise-grade defense for digital creators.</p>
+      <div class="hero__ctas">
+        <a href="/" class="btn btn--primary btn--lg">Protect Artwork Now</a>
+        <a href="/how-it-works" class="btn btn--secondary btn--lg">Learn How It Works</a>
+      </div>
+      <div class="hero__status">
+        <span>Status: <strong>{{ device }}</strong></span>
+        <a href="/status">System Status</a>
+        <a href="/gallery">Protected Files</a>
+      </div>
+      {% if warnings %}
+      <div class="warn">
+        {% for w in warnings %}<p>{{ w }}</p>{% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="section section--surface">
+  <div class="container">
+    <div class="section-header">
+      <h2>How Blindspot Protects Your Work</h2>
+      <p>Advanced adversarial techniques that defend without degrading visual quality.</p>
+    </div>
+    
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🛡️</div>
+        <h3>Invisible Protection</h3>
+        <p>Adversarial perturbations imperceptible to human eyes but effective against AI models.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🔍</div>
+        <h3>Metadata Embedding</h3>
+        <p>Embeds ownership and licensing information directly into the image file.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Robustness Checks</h3>
+        <p>Verifies protection survives compression, resizing, and common image transformations.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Multiple Strength Levels</h3>
+        <p>Choose between clean (nearly invisible), strong, or maximum protection modes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Upload Form -->
+<section class="section">
+  <div class="container">
+    <div class="form-wrapper">
+      <h2>Protect One Upload</h2>
+      <form class="upload-form" action="/protect" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="artwork">Artwork Image <span class="required">*</span></label>
+          <div class="file-input-wrapper">
+            <input type="file" id="artwork" name="artwork" accept="image/png,image/jpeg,image/webp,image/gif,image/bmp,image/tiff" required>
+            <span class="file-input-label">Choose image or drag here</span>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="true_prompt">True Prompt <span class="optional">(optional)</span></label>
+            <input type="text" id="true_prompt" name="true_prompt" placeholder="e.g. watercolor dragon in moonlit forest">
+          </div>
+          
+          <div class="form-group">
+            <label for="decoy_prompt">Decoy Prompt <span class="optional">(optional)</span></label>
+            <input type="text" id="decoy_prompt" name="decoy_prompt" value="generic product photo, neutral studio lighting">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="strength">Protection Strength</label>
+          <select id="strength" name="strength">
+            <option value="paranoid" selected>Paranoid - strongest protection, visible texture possible</option>
+            <option value="clean">Clean — Target 80+, nearly invisible</option>
+            <option value="strong">Strong — Target 90+, slight texture allowed</option>
+            <option value="max">Maximum — Slowest, strongest mode</option>
+          </select>
+        </div>
+        
+        <div class="form-group checkbox">
+          <input type="checkbox" id="corner_label" name="corner_label" checked>
+          <label for="corner_label">Add small corner label: "AI Protected by Nova Project"</label>
+        </div>
+        
+        <button type="submit" class="btn btn--primary btn--lg">Protect Artwork</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Batch Section -->
+<section class="section section--surface">
+  <div class="container">
+    <div class="batch-wrapper">
+      <h2>Batch Protect Folder</h2>
+      <p>Process multiple images already on the VPS in <code>input_art/</code> and write protected PNGs to <code>output_protected/</code>.</p>
+      <form class="batch-form" action="/batch" method="post">
+        <div class="form-group">
+          <label for="batch-strength">Protection Strength</label>
+          <select id="batch-strength" name="strength">
+            <option value="paranoid" selected>Paranoid</option>
+            <option value="clean">Clean</option>
+            <option value="strong">Strong</option>
+            <option value="max">Maximum</option>
+          </select>
+        </div>
+        
+        <div class="form-group checkbox">
+          <input type="checkbox" id="batch-label" name="corner_label" checked>
+          <label for="batch-label">Add corner label</label>
+        </div>
+        
+        <button type="submit" class="btn btn--secondary btn--lg">Run Batch Protection</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Output Policy -->
+<section class="section">
+  <div class="container">
+    <div class="policy-wrapper">
+      <h2>Output Policy & Verification</h2>
+      <p class="policy-text">{{ metadata }}</p>
+      <p class="label-text"><strong>Default Label:</strong> {{ label }}</p>
+      
+      {% if files %}
+      <div class="files-section">
+        <h3>Latest Protected Files</h3>
+        <div class="files-grid">
+          {% for f in files %}
+          <div class="file-card">
+            <a href="{{ f.download_url }}" class="file-link">{{ f.name }}</a>
+            <a href="{{ f.verify_url }}" class="file-verify">Verify Protection</a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      
+      <!-- Brand -->
+      <div>
+        <div class="footer__brand-name">Blindspot Shield</div>
+        <p class="footer__brand-desc">
+          AI-powered adversarial art protection by NovaProject.
+        </p>
+      </div>
+      
+      <!-- Product -->
+      <div>
+        <div class="footer__col-title">Product</div>
+        <nav class="footer__links" aria-label="Product">
+          <a href="/">Protect Artwork</a>
+          <a href="/gallery">Gallery</a>
+          <a href="/how-it-works">How It Works</a>
+          <a href="/faq">FAQ</a>
+        </nav>
+      </div>
+      
+      <!-- Company -->
+      <div>
+        <div class="footer__col-title">Company</div>
+        <nav class="footer__links" aria-label="Company">
+          <a href="https://novaproject.cloud/">NovaProject</a>
+          <a href="https://novaproject.cloud/about">About</a>
+          <a href="https://novaproject.cloud/contact">Contact</a>
+        </nav>
+      </div>
+      
+      <!-- Legal -->
+      <div>
+        <div class="footer__col-title">Legal</div>
+        <nav class="footer__links" aria-label="Legal">
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+          <a href="https://novaproject.cloud/">© NovaProject</a>
+        </nav>
+      </div>
+      
+    </div>
+    
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2026 NovaProject. Blindspot Shield — Protecting creators from AI.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+@keyframes spin { to { transform: rotate(360deg); } }
+</style>
+<script src="/static/main.js" defer></script>
+
+</body>
+</html>

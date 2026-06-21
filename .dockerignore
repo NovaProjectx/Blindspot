@@ -1,0 +1,17 @@
+.git
+.venv
+venv
+__pycache__
+.pytest_cache
+.cache
+backups
+input_art/*
+output_protected/*
+*.pyc
+*.log
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.bin
+*.onnx

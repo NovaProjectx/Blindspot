@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protected Gallery — Blindspot Shield</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="navbar"><div class="navbar__inner"><a href="/" class="navbar__logo"><span class="navbar__logo-text">Blindspot Shield</span></a><nav class="navbar__nav"><a href="/" class="navbar__link">Protect</a><a href="/gallery" class="navbar__link">Gallery</a><a href="/how-it-works" class="navbar__link">How it Works</a><a href="/faq" class="navbar__link">FAQ</a></nav></div></header>
+<main class="wrap" style="padding:120px 24px 64px;max-width:1180px;margin:0 auto;">
+  <section class="hero" style="text-align:left;">
+    <div class="badge">Protected outputs</div>
+    <h1>Gallery</h1>
+    <p class="boundary">Download protected PNGs and verify Nova Project metadata.</p>
+  </section>
+  {% if rows %}
+  <section class="card" style="display:grid;gap:16px;">
+    {% for row in rows %}
+    <article style="display:grid;grid-template-columns:96px 1fr auto;gap:16px;align-items:center;border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:14px;">
+      <img src="{{ row.preview_url }}" alt="{{ row.path.name }}" style="width:96px;height:72px;object-fit:cover;border-radius:12px;">
+      <div>
+        <strong>{{ row.path.name }}</strong>
+        <p style="margin:.35rem 0 0;">{{ "Verified Nova metadata" if row.verified.valid else "Metadata needs verification" }} · score {{ row.verified.protection_score or "?" }}</p>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;">
+        <a class="btn btn--secondary btn--sm" href="{{ row.verify_url }}">Verify</a>
+        <a class="btn btn--primary btn--sm" href="{{ row.download_url }}">Download</a>
+      </div>
+    </article>
+    {% endfor %}
+  </section>
+  {% else %}
+  <section class="card"><p>No protected files yet. Upload art on the Protect page first.</p></section>
+  {% endif %}
+</main>
+</body>
+</html>

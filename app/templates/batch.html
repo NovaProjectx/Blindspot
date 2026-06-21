@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Batch Complete — Nova Project Shield</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="badge">Batch</div>
+      <h1>Batch complete</h1>
+      {% if results %}
+      <div class="table">
+        {% for r in results %}
+        <div class="row">
+          <strong>{{ r.output_path.name }}</strong>
+          <span>{{ r.protection_score }}/100 protection</span>
+          <span>{{ r.visual_quality_score }}/100 quality</span>
+          <span>{{ "protected" if r.reached_threshold else "needs stronger preset" }}</span>
+          <a href="/download/{{ r.output_path.name }}">download</a>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <p>No images found in <code>input_art/</code>.</p>
+      {% endif %}
+      <a class="button" href="/files">View protected files</a>
+      <a class="link" href="/">Back</a>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /input_art/
+Disallow: /output_protected/
+Disallow: /download/
+Disallow: /files
+Disallow: /gallery
+Disallow: /api/files
+Disallow: /api/metrics
+Disallow: /api/jobs/*/download
+Sitemap: https://blindspot.novaproject.cloud/sitemap.xml

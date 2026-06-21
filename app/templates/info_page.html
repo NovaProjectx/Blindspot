@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} — Blindspot Shield</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="navbar"><div class="navbar__inner"><a href="/" class="navbar__logo"><span class="navbar__logo-text">Blindspot Shield</span></a><nav class="navbar__nav"><a href="/" class="navbar__link">Protect</a><a href="/gallery" class="navbar__link">Gallery</a><a href="/how-it-works" class="navbar__link">How it Works</a><a href="/faq" class="navbar__link">FAQ</a></nav></div></header>
+<main class="wrap" style="padding:120px 24px 64px;max-width:980px;margin:0 auto;">
+  <section class="hero" style="text-align:left;">
+    <div class="badge">{{ kicker }}</div>
+    <h1>{{ title }}</h1>
+  </section>
+  <section class="card" style="display:grid;gap:18px;">
+    {% for heading, body in sections %}
+    <article style="border-bottom:1px solid rgba(255,255,255,.12);padding-bottom:16px;">
+      <h2>{{ heading }}</h2>
+      <p>{{ body }}</p>
+    </article>
+    {% endfor %}
+  </section>
+</main>
+</body>
+</html>

@@ -1,0 +1,35 @@
+services:
+  blindspot:
+    build: .
+    container_name: nova-blindspot
+    restart: on-failure
+    ports:
+      - "8080:8080"
+    environment:
+      - NOVA_DEVICE=auto
+      - NOVA_OUTPUT_DIR=/app/output_protected
+      - NOVA_INPUT_DIR=/app/input_art
+      - NOVA_MAX_UPLOAD_MB=50
+      - NOVA_VISUAL_QUALITY_FLOOR=88
+      - NOVA_WATERMARK_STRENGTH=shield
+      - NOVA_PROVENANCE_RECORDS=1
+      - NOVA_ROBUSTNESS_VERIFY=1
+      - NOVA_STRICT_VERIFY=0
+      - NOVA_PRESERVE_VISUALS=1
+      - NOVA_DEFAULT_PRESET=shield
+      - NOVA_CLIP_EPS=0.0006
+      - NOVA_CLIP_ATTACK_STEPS=2
+      - NOVA_CLIP_LR=0.0008
+      - PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    volumes:
+      - ./input_art:/app/input_art
+      - ./output_protected:/app/output_protected

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Protected Files — Nova Project Shield</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="badge">Outputs</div>
+      <h1>Protected files</h1>
+      {% if rows %}
+      <div class="table">
+        {% for row in rows %}
+        <div class="row">
+          <strong>{{ row.path.name }}</strong>
+          <span>{{ "verified" if row.verified.valid else "metadata missing" }}</span>
+          <span>score {{ row.verified.protection_score or "?" }}</span>
+          <a href="{{ row.download_url }}">download</a>
+          <a href="{{ row.verify_url }}">verify JSON</a>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <p>No protected PNGs yet.</p>
+      {% endif %}
+      <a class="link" href="/">Back</a>
+    </section>
+  </main>
+</body>
+</html>
